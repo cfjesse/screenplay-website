@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-  <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Morning Vision Productions - Lord When Do I get a Rose?</title>
-
-  </head>
-
-  <body id="page-top">
+  <div id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav appScrollTracking (checkChangeNav)="onCheckChangeNav($event)" [class.navbar-shrink]="showSmallNav" class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Lord When Will I Get A Rose?</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Lord When Will I Get My Rose?</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <fa-icon [icon]="['fas', 'bars']"></fa-icon>
@@ -38,11 +26,13 @@
       </div>
     </nav>
 
+    <router-outlet></router-outlet>
+
     <!-- Header -->
     <header class="masthead">
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
-          <h1 class="mx-auto my-0 text-uppercase">Lord When Will I Get A Rose?</h1>
+          <h1 class="mx-auto my-0 text-uppercase">Lord When Will I Get My Rose?</h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">January 12, 2019</h2>
           <a href="#about" class="btn btn-primary js-scroll-trigger">Get Your Ticket Now!</a>
         </div>
@@ -54,14 +44,15 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2 class="text-white mb-4">Lord When Will I Get A Rose?</h2>
+            <h2 class="text-white mb-4">Lord When Will I Get My Rose?</h2>
             <p class="text-white-50">
               You don't want to miss this heartfelt gospel stage play that tells the story of 30 year old Latisha Johnson,
               a single mother who is a very educated, successful, self sufficient, Christian woman but tired of being alone.
               Latisha spends all of her time raising her two sons, working in upper management at a very prominent company and
               as the church clerk but she has come to a place in her life she is ready to settle down and be married but is
               tired of waiting on the Lord for the spouse he ordained for her. Since God isn't moving fast enough join us on
-              January 12, 2019 to see what happens when Latisha takes matters into her own hands and what the outcome is going to be.
+              <a href="http://startbootstrap.com/template-overviews/grayscale/"><strong>January 12, 2019</strong></a> to see what happens when
+              Latisha takes matters into her own hands and what the outcome is going to be.
               <a href="http://startbootstrap.com/template-overviews/grayscale/" target="_blank">Get Your Ticket Now!</a></p>
           </div>
         </div>
@@ -215,9 +206,6 @@
     <!-- Custom scripts for this template -->
     <!-- <script src="js/grayscale.min.js"></script> -->
 
-  </body>
-
-</html>
+  </div>
 
 
-<router-outlet></router-outlet>
