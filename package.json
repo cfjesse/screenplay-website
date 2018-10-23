@@ -12,7 +12,8 @@
     "build:browser:prod": "ng build --prod",
     "build:prod": "npm run build:server:prod && npm run build:browser:prod",
     "server": "node local.js",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --aot --prod",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript"
   },
   "private": true,
   "dependencies": {
