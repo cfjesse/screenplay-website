@@ -7,8 +7,5 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
 
-  showSmallNav: boolean;
-  onCheckChangeNav(show) {
-    this.showSmallNav = show;
-  }
+
 }

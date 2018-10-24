@@ -6,20 +6,24 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faPaperPlane, faEnvelope, faTicketAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 import { ScrollTrackingDirective } from './directives/scroll-tracking.directive';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 // Add an icon to the library for convenient access in other components
-library.add(faBars, faPaperPlane);
+library.add(faBars, faPaperPlane, faEnvelope, faTicketAlt, faMobileAlt);
 
 @NgModule({
-  declarations: [AppComponent, ScrollTrackingDirective],
+  declarations: [AppComponent, ScrollTrackingDirective, NavbarComponent],
   imports: [
     CommonModule,
     NgtUniversalModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule
   ],
-  providers: []
+  providers: [ScrollToService]
 })
 export class AppModule {}

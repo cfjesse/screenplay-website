@@ -3,29 +3,7 @@
   <div id="page-top">
 
     <!-- Navigation -->
-    <nav appScrollTracking (checkChangeNav)="onCheckChangeNav($event)" [class.navbar-shrink]="showSmallNav" class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Lord When Will I Get My Rose?</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <fa-icon [icon]="['fas', 'bars']"></fa-icon>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#author">Author</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+    <app-navbar></app-navbar>
     <router-outlet></router-outlet>
 
     <!-- Header -->
@@ -34,13 +12,13 @@
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">Lord When Will I Get My Rose?</h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">January 12, 2019</h2>
-          <a href="#about" class="btn btn-primary js-scroll-trigger">Get Your Ticket Now!</a>
+          <a href="#about" class="btn btn-primary js-scroll-trigger buy-ticket-1">Get Your Ticket Now!</a>
         </div>
       </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="about-section text-center">
+    <section id="about" class="about-section text-center" #about>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -51,17 +29,19 @@
               Latisha spends all of her time raising her two sons, working in upper management at a very prominent company and
               as the church clerk but she has come to a place in her life she is ready to settle down and be married but is
               tired of waiting on the Lord for the spouse he ordained for her. Since God isn't moving fast enough join us on
-              <a href="http://startbootstrap.com/template-overviews/grayscale/"><strong>January 12, 2019</strong></a> to see what happens when
+              <a href="http://startbootstrap.com/template-overviews/grayscale/">January 12, 2019</a> to see what happens when
               Latisha takes matters into her own hands and what the outcome is going to be.
-              <a href="http://startbootstrap.com/template-overviews/grayscale/" target="_blank">Get Your Ticket Now!</a></p>
+              <br>
+              <a href="#signup" class="btn btn-primary js-scroll-trigger buy-ticket-2">Get Your Ticket Now!</a>
           </div>
+
         </div>
         <img src="/assets/ipad2.png" class="img-fluid" alt="">
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="author" class="projects-section bg-light">
+    <section id="author" class="projects-section bg-light" #author>
       <div class="container">
 
         <!-- Featured Project Row -->
@@ -72,7 +52,14 @@
           <div class="col-xl-4 col-lg-5">
             <div class="featured-text text-center text-lg-left">
               <h4>The Author</h4>
-              <p class="text-black-50 mb-0">I need some info about you to put here! 3 lines or so is fine if you have a bio you already wrote it would go here</p>
+              <p class="text-black-50 mb-0">
+                Adeleane Dixon is the 9th child of the late Rev. John T and Mrs Mamie L. Haymon of Penney Farms, Fl.
+                She has been married to her College sweetheart for 30 years and they were blessed with four children Victoria, Christina, Martin Jr. and Marlin.
+                They have six grandchildren whom she refers to as her "Six Heartbeats".
+                She has been a passionate writer since the age of 15 and is the founder of the
+                Morning Visions Productions Co in which she takes pride in introducing children to the performing arts.
+                She is the writer, producer, director of several hit gospel stage plays.
+              </p>
             </div>
           </div>
         </div>
@@ -80,14 +67,18 @@
         <!-- Project One Row -->
         <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
           <div class="col-lg-6">
-            <img class="img-fluid" src="/assets/demo-image-01.jpg" alt="">
+            <img class="img-fluid" src="/assets/book.jpg" alt="">
           </div>
           <div class="col-lg-6">
             <div class="bg-black text-center h-100 project">
               <div class="d-flex h-100">
                 <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <h4 class="text-white">Morning Vision Productions</h4>
-                  <p class="mb-0 text-white-50">Something about Morning Vision Productions Here (Slogan, snippet, etc...)</p>
+                  <h4 class="text-white">Literary Works</h4>
+                  <p class="mb-0 text-white-50">
+                    Adeleane Dixon is the co-author of <strong>50 Shades of Change</strong> and author of <strong>What happened to my Rock?</strong>
+                    the story of the emotional journey she experienced while caring for her parents who had Alzheimer's and Dementia.
+                    The book will be in bookstores in the Spring of 2019.
+                  </p>
                   <hr class="d-none d-lg-block mb-0 ml-0">
                 </div>
               </div>
@@ -98,14 +89,18 @@
         <!-- Project Two Row -->
         <div class="row justify-content-center no-gutters">
           <div class="col-lg-6">
-            <img class="img-fluid" src="/assets/demo-image-02.jpg" alt="">
+            <img class="img-fluid" src="/assets/theater.jpg" alt="">
           </div>
           <div class="col-lg-6 order-lg-first">
             <div class="bg-black text-center h-100 project">
               <div class="d-flex h-100">
                 <div class="project-text w-100 my-auto text-center text-lg-right">
-                  <h4 class="text-white">Some other info</h4>
-                  <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                  <h4 class="text-white">Theatrical Productions</h4>
+                  <p class="mb-0 text-white-50">
+                    Adeleane is the writer, producer, director of the hit gospel stage play <strong>The a Time Is Now; the play the will preach</strong>,
+                    the black history stage play <strong>The Blood Crying From the Ground; A story of sacrifice from Slavery to Freedom</strong> and now the soon to
+                    be blockbuster hit play <strong>Lord When Will I Get My Rose?</strong>
+                  </p>
                   <hr class="d-none d-lg-block mb-0 mr-0">
                 </div>
               </div>
@@ -117,7 +112,7 @@
     </section>
 
     <!-- Signup Section -->
-    <section id="signup" class="signup-section">
+    <section id="signup" class="signup-section" #signup>
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-lg-8 mx-auto text-center">
@@ -144,7 +139,7 @@
           <div class="col-md-4 mb-3 mb-md-0">
             <div class="card py-4 h-100">
               <div class="card-body text-center">
-                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                <fa-icon [icon]="['fas', 'ticket-alt']" size="3x" class="text-primary card-icon-blue"></fa-icon>
                 <h4 class="text-uppercase m-0">Event</h4>
                 <hr class="my-4">
                 <div class="small text-black-50">
@@ -159,7 +154,7 @@
           <div class="col-md-4 mb-3 mb-md-0">
             <div class="card py-4 h-100">
               <div class="card-body text-center">
-                <i class="fas fa-envelope text-primary mb-2"></i>
+                <fa-icon [icon]="['fas', 'envelope']" size="3x" class="text-primary card-icon-blue"></fa-icon>
                 <h4 class="text-uppercase m-0">Email</h4>
                 <hr class="my-4">
                 <div class="small text-black-50">
@@ -172,7 +167,7 @@
           <div class="col-md-4 mb-3 mb-md-0">
             <div class="card py-4 h-100">
               <div class="card-body text-center">
-                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                <fa-icon [icon]="['fas', 'mobile-alt']" size="3x" class="text-primary card-icon-blue"></fa-icon>
                 <h4 class="text-uppercase m-0">Phone</h4>
                 <hr class="my-4">
                 <div class="small text-black-50">+1 (555) 902-8832</div>
@@ -199,12 +194,9 @@
     <!-- Footer -->
     <footer class="bg-black small text-center text-white-50">
       <div class="container">
-        Copyright &copy; Your Website 2018
+        Copyright &copy; Morning Vision Productions 2018
       </div>
     </footer>
-
-    <!-- Custom scripts for this template -->
-    <!-- <script src="js/grayscale.min.js"></script> -->
 
   </div>
 
