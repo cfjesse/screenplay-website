@@ -1,4 +1,5 @@
 import { Directive, HostListener, Output, EventEmitter, Input } from '@angular/core';
+import { Page } from '../interfaces/page.interface';
 
 @Directive({
   selector: '[appScrollTracking]'
@@ -10,7 +11,11 @@ export class ScrollTrackingDirective {
   @Input() maxScrollBeforChange = 150;
   @Input() time = 200;
 
-  checkChange(offset: number) {
+  currentPage: Page;
+
+  constructor() { }
+
+  checkChange(offset: number, event) {
 
     if (offset > 36) {
 
@@ -21,8 +26,9 @@ export class ScrollTrackingDirective {
   }
 
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll($event: any): void {
+  @HostListener('window:load', ['$event'])
+  onWindowScroll($event: Event): void {
     clearTimeout(this.timeout);
-    this.checkChange(window.pageYOffset);
+    this.checkChange(window.pageYOffset, $event);
   }
 }
