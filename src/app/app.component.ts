@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   @ViewChild('about') about: ElementRef;
   @ViewChild('author') author: ElementRef;
   @ViewChild('signup') signup: ElementRef;
+  width = 0;
 
   constructor(private elementScrollService: ElementScrollPercentage) { }
 
@@ -26,7 +27,10 @@ export class AppComponent implements OnInit {
     console.log(this.elementScrollService.pages);
 
     this.elementScrollService.getScrollAsStream().subscribe(stream => {
+
       console.log(stream);
+      this.width = stream;
+
     });
   }
 

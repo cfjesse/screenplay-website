@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Navbar } from './../../animations/bootstrap.animation';
 import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
-import { of, Subscription } from 'rxjs';
-import { concatMap, timeout, catchError, delay } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -18,6 +17,9 @@ export class NavbarComponent {
   showMobileMenu = false;
   collapsing = false;
   sub: Subscription;
+
+  @Input() width: number;
+
   constructor(private scrollService: ScrollToService) { }
 
   onCheckChangeNav(show): void {

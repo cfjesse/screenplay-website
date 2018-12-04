@@ -25,13 +25,15 @@ export class ElementScrollPercentage {
     return percent * 100;
   }
 
-  addPage(element: ElementRef, name: string) {
+  addPage(element: ElementRef, name: string): void {
     this.pages.push({
       name: name,
       rect: element.nativeElement.getBoundingClientRect(),
       element: element
     });
   }
+
+  getPages(): Page[] { return this.pages; }
 
   public getScrollAsStream(node: Target = document): Observable<number> {
     let stream;
