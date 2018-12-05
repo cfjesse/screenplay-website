@@ -24,13 +24,8 @@ export class AppComponent implements OnInit {
     this.elementScrollService.addPage(this.author, 'author');
     this.elementScrollService.addPage(this.contact, 'contact');
 
-    console.log(this.elementScrollService.pages);
-
     this.elementScrollService.getScrollAsStream().subscribe(stream => {
-
-      console.log(stream);
       this.width = stream;
-
     });
   }
 
