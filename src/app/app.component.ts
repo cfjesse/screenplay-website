@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   @ViewChild('top') top: ElementRef;
   @ViewChild('about') about: ElementRef;
   @ViewChild('author') author: ElementRef;
-  @ViewChild('signup') signup: ElementRef;
+  @ViewChild('contact') contact: ElementRef;
   width = 0;
 
   constructor(private elementScrollService: ElementScrollPercentage) { }
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.elementScrollService.addPage(this.top, 'top');
     this.elementScrollService.addPage(this.about, 'about');
     this.elementScrollService.addPage(this.author, 'author');
-    this.elementScrollService.addPage(this.signup, 'signup');
+    this.elementScrollService.addPage(this.contact, 'contact');
 
     console.log(this.elementScrollService.pages);
 

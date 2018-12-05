@@ -1,7 +1,8 @@
 <nav appScrollTracking (checkChangeNav)="onCheckChangeNav($event)" [class.navbar-shrink]="showSmallNav" class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 
   <div class="container">
-    <a class="navbar-brand" (click)="scrollIntoView($event, 'page-top')" href="#page-top">Lord, When Will I Get My Rose?</a>
+    <a class="navbar-brand d-block d-sm-none small" alt="home page" title="home page" (click)="scrollIntoView($event, 'page-top')" href="#page-top">Lord, When Will I Get My Rose?</a>
+    <a class="navbar-brand d-none d-sm-block" alt="home page" title="home page" (click)="scrollIntoView($event, 'page-top')" href="#page-top">Lord, When Will I Get My Rose?</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" (click)="toggleMobileMenu()" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
       <fa-icon [icon]="['fas', 'bars']"></fa-icon>
@@ -9,13 +10,13 @@
     <div class="collapse navbar-collapse" [ngClass]="{'show': showMobileMenu}" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#about" (click)="scrollIntoView($event, 'about')">About</a>
+          <a class="nav-link" href="#about" alt="about the play" title="about the play" (click)="scrollIntoView($event, 'about')">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#author" (click)="scrollIntoView($event, 'author')">Author</a>
+          <a class="nav-link" href="#author" alt="about the author" title="about the author" (click)="scrollIntoView($event, 'author')">Author</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#signup" (click)="scrollIntoView($event, 'signup')">Contact</a>
+          <a class="nav-link" href="#contact" alt="contact us" title="contact us" (click)="scrollIntoView($event, 'contact')">Contact</a>
         </li>
       </ul>
     </div>

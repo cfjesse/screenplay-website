@@ -11,6 +11,12 @@
   }
 }
 
+.container {
+  .small {
+    font-size: .9rem;
+  }
+}
+
 @media screen and (max-width: 991px) {
 
   #mainNav {
