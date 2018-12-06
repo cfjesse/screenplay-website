@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   @ViewChild('author') author: ElementRef;
   @ViewChild('contact') contact: ElementRef;
   width = 0;
+  currentYear = new Date().getFullYear();
 
   constructor(private elementScrollService: ElementScrollPercentage) { }
 
